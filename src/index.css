@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Space Grotesk", sans-serif;
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-low: var(--surface-low);
+  --color-surface-high: var(--surface-high);
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-error: var(--error);
+  --color-error-container: var(--error-container);
+  --color-tertiary: var(--tertiary);
+  --color-outline-variant: var(--outline-variant);
+}
+
+:root {
+  --background: #0E1417;
+  --surface: #0E1417;
+  --surface-low: #161D1F;
+  --surface-high: #242B2E;
+  --primary: #00D1FF;
+  --primary-container: #A4E6FF;
+  --on-surface: #F8FAFC;
+  --on-surface-variant: #94A3B8;
+  --error: #FF4D4D;
+  --error-container: #93000A;
+  --tertiary: #FFB800;
+  --outline-variant: #3C494E;
+}
+
+.light {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-low: #f1f5f9;
+  --surface-high: #e2e8f0;
+  --primary: #0ea5e9;
+  --primary-container: #e0f2fe;
+  --on-surface: #0f172a;
+  --on-surface-variant: #475569;
+  --error: #ef4444;
+  --error-container: #fee2e2;
+  --tertiary: #f59e0b;
+  --outline-variant: #cbd5e1;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans transition-colors duration-300;
+  }
+}
+
+.glass-panel {
+  background: rgba(var(--surface), 0.7);
+  backdrop-filter: blur(20px);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
